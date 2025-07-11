@@ -8,10 +8,12 @@ interface LoginParams {
 
 interface RegisterParams extends LoginParams {
    username: string;
+   gender: string;
+   age: number;
 }
 
-export const login = async ({ email, password }: LoginParams) => {
-   const { data } = await axiosInstance.post(API_SUFFIXS.AUTH.LOGIN, { email, password });
+export const login = async (loginData: LoginParams) => {
+   const { data } = await axiosInstance.post(API_SUFFIXS.AUTH.LOGIN, loginData);
 
    return data;
 };
