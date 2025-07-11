@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASEURL = "https://localhost:8080";
+const API_BASEURL = "https://localhost:8080/api";
 
 const baseConfig = {
    withCredentials: true,
