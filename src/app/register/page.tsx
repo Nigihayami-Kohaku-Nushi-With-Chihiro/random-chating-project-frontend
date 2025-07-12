@@ -8,7 +8,7 @@ import { register } from "@/api";
 import type { RegisterParams } from "@/types";
 
 const Register: React.FC = () => {
-   const [form, setForm] = useState<RegisterParams>({ username: "", email: "", password: "", gender: "", age: 0 });
+   const [form, setForm] = useState<RegisterParams>({ username: "", email: "", password: "", gender: "", age: null });
    const router = useRouter();
 
    const handleRegister = async (event: React.FormEvent) => {
