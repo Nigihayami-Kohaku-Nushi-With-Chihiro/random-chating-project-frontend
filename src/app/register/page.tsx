@@ -23,36 +23,38 @@ const Register: React.FC = () => {
    };
 
    return (
-      <form className="flex flex-col" onSubmit={handleRegister}>
-         <input
-            className="bg-white border border-black"
-            type="text"
-            value={form.username}
-            onChange={(event) => setForm({ ...form, username: event.target.value })}
-         />
-         <input
-            className="bg-white border border-black"
-            type="email"
-            value={form.email}
-            onChange={(event) => setForm({ ...form, email: event.target.value })}
-         />
-         <input
-            className="bg-white border border-black"
-            type="password"
-            onChange={(event) => setForm({ ...form, password: event.target.value })}
-         />
-         <input
-            className="bg-white border border-black"
-            type="text"
-            onChange={(event) => setForm({ ...form, gender: event.target.value })}
-         />
-         <input
-            className="bg-white border border-black"
-            type="number"
-            onChange={(event) => setForm({ ...form, age: Number(event.target.value) })}
-         />
-         <button type="submit">회원 가입</button>
-      </form>
+      <>
+         <form className="flex flex-col" onSubmit={handleRegister}>
+            <input
+               className="bg-white border border-black"
+               type="text"
+               value={form.username}
+               onChange={(event) => setForm({ ...form, username: event.target.value })}
+            />
+            <input
+               className="bg-white border border-black"
+               type="email"
+               value={form.email}
+               onChange={(event) => setForm({ ...form, email: event.target.value })}
+            />
+            <input
+               className="bg-white border border-black"
+               type="password"
+               onChange={(event) => setForm({ ...form, password: event.target.value })}
+            />
+            <input
+               className="bg-white border border-black"
+               type="text"
+               onChange={(event) => setForm({ ...form, gender: event.target.value })}
+            />
+            <input
+               className="bg-white border border-black"
+               type="number"
+               onChange={(event) => setForm({ ...form, age: Number(event.target.value) })}
+            />
+            <button type="submit">회원 가입</button>
+         </form>
+      </>
    );
 };
 
