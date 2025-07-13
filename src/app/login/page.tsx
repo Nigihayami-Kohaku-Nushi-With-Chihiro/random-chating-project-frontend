@@ -41,7 +41,10 @@ const Login: React.FC = () => {
          </form>
 
          <p>
-            아직 회원이 아니신가요? <Link href={"/register"}>계정 생성하러 가기</Link>
+            아직 회원이 아니신가요?
+            <Link href={"/register"} className="text-blue-300">
+               계정 생성하러 가기
+            </Link>
          </p>
       </>
    );
