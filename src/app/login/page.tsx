@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import Link from "next/link";
+
 import { login } from "@/api";
 
 import type { LoginParams } from "@/types";
@@ -37,6 +39,10 @@ const Login: React.FC = () => {
                onChange={(event) => setForm({ ...form, password: event.target.value })}
             />
          </form>
+
+         <p>
+            아직 회원이 아니신가요? <Link href={"/register"}>계정 생성하러 가기</Link>
+         </p>
       </>
    );
 };
