@@ -15,8 +15,13 @@ const Register: React.FC = () => {
       event.preventDefault();
 
       try {
-         await register(form);
-         router.push("/login");
+         const res = await register(form);
+
+         if (res.token) {
+            document.cookie = `token=${res.token}; path=/; max-age=3600`;
+         }
+
+         router.push("/");
       } catch (e) {
          console.error(`Account creation failed: ${e}`);
       }
