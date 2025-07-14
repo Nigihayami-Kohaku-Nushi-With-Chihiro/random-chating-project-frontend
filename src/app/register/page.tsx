@@ -18,7 +18,7 @@ const Register: React.FC = () => {
          await register(form);
          router.push("/login");
       } catch (e) {
-         console.error(e);
+         console.error(`Account creation failed: ${e}`);
       }
    };
 
