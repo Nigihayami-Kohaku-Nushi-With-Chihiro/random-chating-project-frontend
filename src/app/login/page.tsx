@@ -17,10 +17,14 @@ const Login: React.FC = () => {
       event.preventDefault();
 
       try {
-         await login(form);
+         const res = await login(form);
+         const accessToken = res.token;
+
+         document.cookie = `token=${accessToken}; path=/; max-age=3600`; // 1h
+
          router.push("/");
       } catch (e) {
-         console.error(e);
+         console.error(`Login failed: ${e}`);
       }
    };
 
