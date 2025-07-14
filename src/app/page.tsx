@@ -1,11 +1,14 @@
 import React from "react";
 
-const Home: React.FC = () => {
-   return (
-      <div className="text-center">
-         <p className="text-2xl">Home Component</p>
-      </div>
-   );
+import { cookies } from "next/headers";
+
+import RootClient from "@/components/RootClient";
+
+const Home: React.FC = async () => {
+   const cookieStore = await cookies();
+   const token = cookieStore.get("token")?.value;
+
+   return <RootClient token={token ?? null} />;
 };
 
 export default Home;
