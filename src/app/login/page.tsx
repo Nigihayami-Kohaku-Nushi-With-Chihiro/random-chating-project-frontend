@@ -29,19 +29,26 @@ const Login: React.FC = () => {
    };
 
    return (
-      <>
-         <form className="flex flex-col" onSubmit={handleLogin}>
+      <div className="flex w-full flex-col items-center gap-12">
+         <p className="text-5xl">Log in</p>
+
+         <form className="flex h-[12rem] w-xl flex-col items-center justify-around" onSubmit={handleLogin}>
             <input
-               className="bg-white border border-black"
+               className="h-3/10 w-full rounded-lg border-3 border-gray-500 p-2"
                type="email"
                value={form.email}
                onChange={(event) => setForm({ ...form, email: event.target.value })}
+               placeholder="email..."
             />
             <input
-               className="bg-white border border-black"
+               className="h-3/10 w-full rounded-lg border-3 border-gray-500 p-2"
                type="password"
                onChange={(event) => setForm({ ...form, password: event.target.value })}
+               placeholder="password..."
             />
+            <button type="submit" className="h-10 w-3/10 cursor-pointer rounded-xl border bg-white">
+               <p className="text-2xl text-black">→</p>
+            </button>
          </form>
 
          <p>
@@ -50,7 +57,7 @@ const Login: React.FC = () => {
                계정 생성하러 가기
             </Link>
          </p>
-      </>
+      </div>
    );
 };
 
