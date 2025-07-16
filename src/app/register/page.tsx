@@ -18,7 +18,7 @@ const Register: React.FC = () => {
          const res = await register(form);
 
          if (res.token) {
-            document.cookie = `token=${res.token}; path=/; max-age=3600`;
+            document.cookie = `token=${res.token}; path=/; max-age=3600`; // 1h
          }
 
          router.push("/");
@@ -31,29 +31,29 @@ const Register: React.FC = () => {
       <>
          <form className="flex flex-col" onSubmit={handleRegister}>
             <input
-               className="bg-white border border-black"
+               className="border border-black bg-white"
                type="text"
                value={form.username}
                onChange={(event) => setForm({ ...form, username: event.target.value })}
             />
             <input
-               className="bg-white border border-black"
+               className="border border-black bg-white"
                type="email"
                value={form.email}
                onChange={(event) => setForm({ ...form, email: event.target.value })}
             />
             <input
-               className="bg-white border border-black"
+               className="border border-black bg-white"
                type="password"
                onChange={(event) => setForm({ ...form, password: event.target.value })}
             />
             <input
-               className="bg-white border border-black"
+               className="border border-black bg-white"
                type="text"
                onChange={(event) => setForm({ ...form, gender: event.target.value })}
             />
             <input
-               className="bg-white border border-black"
+               className="border border-black bg-white"
                type="number"
                onChange={(event) => setForm({ ...form, age: Number(event.target.value) })}
             />
