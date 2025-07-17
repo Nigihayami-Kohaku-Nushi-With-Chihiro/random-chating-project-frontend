@@ -17,7 +17,7 @@ const RootClient: React.FC<TokenProps> = ({ token }) => {
    }, [token, router]);
 
    if (!token) {
-      return <p>로그인이 필요합니다.</p>;
+      return <p>로그인이 필요합니다. 리디렉션 중...</p>;
    }
 
    return (
